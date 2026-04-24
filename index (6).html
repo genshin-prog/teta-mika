@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>С Днём Рождения, Алексей!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Unbounded:wght@400;700;900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- КОНФЕТТИ -->
+  <div id="confetti-container"></div>
+
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <section id="main-screen">
+    <div class="stars"></div>
+    <div class="hero-content">
+      <div class="cake-emoji">🎂</div>
+      <h1 class="main-title">ПОЗДРАВЛЯЮ<br/>С ДНЁМ РОЖДЕНИЯ</h1>
+      <p class="subtitle">ты на один день ближе к смерти</p>
+      <div class="skull">💀</div>
+    </div>
+
+    <div class="buttons-container">
+      <!-- КНОПКА 1 -->
+      <button class="btn btn-teto" onclick="openModal('teto')">
+        <span class="btn-icon">🎀</span>
+        <span class="btn-text">Поздравление от Тето</span>
+        <div class="btn-glow"></div>
+      </button>
+
+      <!-- КНОПКА 2 -->
+      <button class="btn btn-surprise" onclick="openModal('surprise')">
+        <span class="btn-text">ПОЗДРАВЛЕНИЕ</span>
+        <div class="btn-glow"></div>
+      </button>
+
+      <!-- КНОПКА 3 -->
+      <button class="btn btn-special" onclick="openModal('special')">
+        <span class="btn-icon">✨</span>
+        <span class="btn-text">Поздравление от ...</span>
+        <div class="btn-glow"></div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== МОДАЛКА 1: ТЕТО ========== -->
+  <div id="modal-teto" class="modal" onclick="closeModalOnBg(event, 'teto')">
+    <div class="modal-inner modal-teto-inner">
+      <button class="close-btn" onclick="closeModal('teto')">✕</button>
+
+      <div class="teto-header">
+        <h2 class="teto-title">💖 Тето Касане говорит… 💖</h2>
+      </div>
+
+      <div class="teto-img-wrap">
+        <img
+          src="https://vsthemes.org/uploads/posts/2025-10/58df27c4a2_snimok-jekrana-426.webp"
+          alt="Тето Касане"
+          class="teto-img"
+          onerror="this.src='https://i.pinimg.com/736x/f9/4b/57/f94b574c0e6b7fa17a58fb32c3bb5fd9.jpg'"
+        />
+      </div>
+
+      <div class="teto-wishes">
+
+        <div class="wish-card wish-card-1">
+          <div class="wish-icon">🎵</div>
+          <p>Алексей, с днём рождения! Даже я, великая Тето Касане, прервала свою концертную программу, чтобы поздравить тебя лично. Это честь, которую мало кто удостаивается!</p>
+        </div>
+
+        <div class="wish-card wish-card-2">
+          <div class="wish-icon">🌸</div>
+          <p>Желаю тебе столько счастья, сколько у меня фанатов — а их у меня, к твоему сведению, <strong>ОЧЕНЬ</strong> много. Пусть каждый день будет наполнен музыкой, смехом и чем-то вкусным!</p>
+        </div>
+
+        <div class="wish-card wish-card-3">
+          <div class="wish-icon">💎</div>
+          <p>Пусть твои враги завидуют молча, друзья веселятся громко, а ты сам живёшь так, будто каждый день — это твой сольный концерт!</p>
+        </div>
+
+        <div class="wish-card wish-card-4">
+          <div class="wish-icon">🦋</div>
+          <p>Ты заслуживаешь всего лучшего: крутых приключений, тёплых объятий и wi-fi без лагов. Это самые важные вещи в жизни, поверь!</p>
+        </div>
+
+        <div class="wish-card wish-card-5">
+          <div class="wish-icon">🎀</div>
+          <p>Расти, развивайся, удивляй мир своим существованием. И помни — ты особенный. Даже Тето так считает, а значит это <em>официально</em>. 💖</p>
+        </div>
+
+        <div class="wish-card wish-card-6">
+          <div class="wish-icon">⭐</div>
+          <p>С любовью и аплодисментами, <strong>Тето Касане</strong> 🎤<br/>P.S. Торт не делить!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== МОДАЛКА 2: СЮРПРИЗ ========== -->
+  <div id="modal-surprise" class="modal" onclick="closeModalOnBg(event, 'surprise')">
+    <div class="modal-inner modal-surprise-inner">
+      <button class="close-btn close-btn-white" onclick="closeModal('surprise')">✕</button>
+
+      <div id="surprise-phase-1">
+        <div class="surprise-img-wrap">
+          <img
+            src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1492265365842916"
+            alt="Поздравление"
+            class="surprise-img"
+            onerror="this.src='https://i.imgur.com/oBBvWPn.jpeg'"
+          />
+        </div>
+        <div class="surprise-text-overlay">
+          <h2 class="surprise-big-text">🏆 ПОЗДРАВЛЯЮ! 🏆</h2>
+          <p class="surprise-prize">ТЫ ВЫИГРАЛ<br/><span class="prize-highlight">ЛАМБА УРУС</span><br/>И<br/><span class="prize-highlight">БАБУ ЧАЙ</span></p>
+          <button class="btn-next" onclick="goPhase2()">Забрать приз →</button>
+        </div>
+      </div>
+
+      <div id="surprise-phase-2" style="display:none">
+        <h2 class="wishes-title">🎉 А ещё пожелания! 🎉</h2>
+        <div class="surprise-wishes-grid">
+          <div class="sw-card">🚀 Пусть карьера растёт быстрее ракеты!</div>
+          <div class="sw-card">💰 Пусть деньги текут рекой, а не ручейком!</div>
+          <div class="sw-card">🎮 Бесконечные победы в играх и жизни!</div>
+          <div class="sw-card">🍕 Пицца всегда горячая, доставка — быстрая!</div>
+          <div class="sw-card">😎 Выгляди круто в любую погоду!</div>
+          <div class="sw-card">🌍 Путешествуй туда, куда мечтаешь!</div>
+          <div class="sw-card">💪 Сил, здоровья и ни одной понедельничной хандры!</div>
+          <div class="sw-card">🎂 Пусть каждый день рождения лучше предыдущего!</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== МОДАЛКА 3: СПЕЦИАЛЬНАЯ ========== -->
+  <div id="modal-special" class="modal" onclick="closeModalOnBg(event, 'special')">
+    <div class="modal-inner modal-special-inner">
+      <button class="close-btn close-btn-dark" onclick="closeModal('special')">✕</button>
+
+      <h2 class="special-title">🌟 Поздравление от ... 🌟</h2>
+
+      <div class="special-columns">
+
+        <!-- ЛЕВАЯ ЧАСТЬ -->
+        <div class="special-col left-col">
+          <div class="special-img-wrap">
+            <img
+              src="https://cdn.forbes.ru/files/story_images/gettyimages-591529968.jpg__1563198568__98999.jpg"
+              alt="Уважаемый человек"
+              class="special-img"
+              onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jeffrey_Epstein_mug_shot.jpg/330px-Jeffrey_Epstein_mug_shot.jpg'"
+            />
+          </div>
+          <div class="left-wish">
+            <div class="quote-mark">"</div>
+            <p>Расти большой,<br/>не будь лапшой!</p>
+            <div class="quote-mark right-q">"</div>
+            <span class="quote-author">— Очень важный человек</span>
+          </div>
+        </div>
+
+        <!-- РАЗДЕЛИТЕЛЬ -->
+        <div class="special-divider">⚡</div>
+
+        <!-- ПРАВАЯ ЧАСТЬ -->
+        <div class="special-col right-col">
+          <div class="special-img-wrap genshin-wrap">
+            <img
+              src="https://newcdn.igromania.ru/articles/pics/tmp/images/2025/9/9/cebbc92d-6fff-4e11-91dd-f73698276c4d.jpg"
+              alt="Фурина"
+              class="special-img"
+              onerror="this.src='https://static.wikia.nocookie.net/gensin-impact/images/5/57/Character_Furina_Thumb.png'"
+            />
+          </div>
+          <div class="right-wish">
+            <div class="primogem-badge">💎 67 000 000</div>
+            <p class="primogem-text">Поздравляю! Ты получаешь<br/><strong>67 миллионов примогемов</strong><br/>от лично Фурины де Фонтен!</p>
+            <p class="primogem-sub">Зачислятся после перезапуска игры 😇</p>
+            <button class="btn-prank" onclick="prankClick()">
+              😳 Смотреть порно Фурины со слаймом
+            </button>
+            <div id="prank-msg" class="prank-msg" style="display:none">
+              🚨 ТЫ ПОПАЛСЯ! Это пранк! 😂<br/>Иди лучше играть в Genshin!
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
